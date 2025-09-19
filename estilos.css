@@ -1,0 +1,117 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Estilos para el tema claro (por defecto) */
+body.tema-claro {
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* Estilos para el tema oscuro */
+body.tema-oscuro {
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+/* Estilos para el botón de cambio de tema */
+.boton-tema {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+.tema-claro .boton-tema {
+    background-color: #8a2be2;
+    color: white;
+}
+
+.tema-oscuro .boton-tema {
+    background-color: #9c4dff;
+    color: white;
+}
+
+/* Estilos para el contenedor principal */
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para los títulos */
+h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #8a2be2;
+}
+
+/* Estilos para los enlaces */
+a {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 24px;
+    background-color: #8a2be2;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+a:hover {
+    background-color: #7b1fa2;
+}
+
+/* Estilos específicos para la página de términos */
+.terminos {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.terminos h2 {
+    color: #8a2be2;
+    margin-top: 2rem;
+}
+
+.terminos p {
+    margin-bottom: 1rem;
+}
+
+/* Estilos para el pie de página */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .contenedor {
+        padding: 10px;
+    }
+}

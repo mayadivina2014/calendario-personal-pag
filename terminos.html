@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos y Condiciones - Calendario Personal</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="tema-claro">
+    <button class="boton-tema" id="cambiarTema">🌙 Tema Oscuro</button>
+    
+    <div class="contenedor">
+        <h1>Términos y Condiciones de Uso</h1>
+        
+        <div class="terminos">
+            <h2>1. Aceptación de los Términos</h2>
+            <p>Al acceder y utilizar el Calendario Personal, usted acepta cumplir con estos términos y condiciones de uso. Si no está de acuerdo con alguna parte de estos términos, no debe utilizar nuestra aplicación.</p>
+            
+            <h2>2. Uso de la Aplicación</h2>
+            <p>El Calendario Personal está diseñado para ayudar a los usuarios a organizar sus eventos y tareas diarias. Usted es responsable de la información que ingrese en la aplicación y de mantener la confidencialidad de sus credenciales de acceso.</p>
+            
+            <h2>3. Privacidad</h2>
+            <p>Respetamos su privacidad. Toda la información personal que proporcione estará sujeta a nuestra Política de Privacidad, que describe cómo recopilamos, utilizamos y protegemos sus datos personales.</p>
+            
+            <h2>4. Propiedad Intelectual</h2>
+            <p>Todo el contenido de la aplicación, incluyendo textos, gráficos, logotipos, iconos, imágenes, y software, es propiedad de Calendario Personal o sus proveedores de contenido y está protegido por las leyes de propiedad intelectual.</p>
+            
+            <h2>5. Limitación de Responsabilidad</h2>
+            <p>La aplicación se proporciona "tal cual" y "según disponibilidad". No garantizamos que la aplicación esté libre de errores o que su funcionamiento sea ininterrumpido. No seremos responsables por ningún daño directo, indirecto, incidental, especial o consecuente que resulte del uso o la imposibilidad de usar la aplicación.</p>
+            
+            <h2>6. Modificaciones</h2>
+            <p>Nos reservamos el derecho de modificar estos términos en cualquier momento. Las modificaciones entrarán en vigor inmediatamente después de su publicación en la aplicación. El uso continuado de la aplicación después de dichas modificaciones constituirá su aceptación de los nuevos términos.</p>
+            
+            <h2>7. Contacto</h2>
+            <p>Si tiene alguna pregunta sobre estos Términos y Condiciones, puede contactarnos a través de nuestro formulario de contacto o enviando un correo electrónico a contacto@calendariopersonal.com.</p>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="index.html">Volver al Inicio</a>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2025 Calendario Personal - Todos los derechos reservados | 
+            <a href="privacidad.html">Política de Privacidad</a> | 
+            <a href="index.html">Inicio</a>
+        </p>
+    </footer>
+
+    <script>
+        // Función para cambiar entre temas claro y oscuro
+        document.getElementById('cambiarTema').addEventListener('click', function() {
+            const body = document.body;
+            const botonTema = document.getElementById('cambiarTema');
+            
+            if (body.classList.contains('tema-claro')) {
+                body.classList.remove('tema-claro');
+                body.classList.add('tema-oscuro');
+                botonTema.textContent = '☀️ Tema Claro';
+                // Guardar preferencia
+                localStorage.setItem('tema', 'oscuro');
+            } else {
+                body.classList.remove('tema-oscuro');
+                body.classList.add('tema-claro');
+                botonTema.textContent = '🌙 Tema Oscuro';
+                // Guardar preferencia
+                localStorage.setItem('tema', 'claro');
+            }
+        });
+
+        // Cargar tema guardado al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            const temaGuardado = localStorage.getItem('tema');
+            const botonTema = document.getElementById('cambiarTema');
+            
+            if (temaGuardado === 'oscuro') {
+                document.body.classList.remove('tema-claro');
+                document.body.classList.add('tema-oscuro');
+                botonTema.textContent = '☀️ Tema Claro';
+            }
+        });
+    </script>
+</body>
+</html>

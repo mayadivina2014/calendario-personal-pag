@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad - Calendario Personal</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="tema-claro">
+    <button class="boton-tema" id="cambiarTema">🌙 Tema Oscuro</button>
+    
+    <div class="contenedor">
+        <h1>Política de Privacidad</h1>
+        
+        <div class="terminos">
+            <p><em>Última actualización: 19 de septiembre de 2025</em></p>
+            
+            <h2>1. Información que Recopilamos</h2>
+            <p>Para proporcionarte nuestros servicios de calendario personal, podemos recopilar la siguiente información:</p>
+            <ul>
+                <li>Información de registro (nombre, correo electrónico, contraseña)</li>
+                <li>Eventos, recordatorios y tareas que crees en la aplicación</li>
+                <li>Preferencias de visualización y configuración de la cuenta</li>
+                <li>Datos de uso (cómo interactúas con la aplicación)</li>
+            </ul>
+            
+            <h2>2. Cómo Utilizamos tu Información</h2>
+            <p>Utilizamos la información recopilada para:</p>
+            <ul>
+                <li>Proporcionar y mantener nuestro servicio</li>
+                <li>Notificarte sobre eventos y recordatorios programados</li>
+                <li>Mejorar y personalizar tu experiencia</li>
+                <li>Desarrollar nuevas características y funcionalidades</li>
+                <li>Comunicarnos contigo sobre actualizaciones y cambios en nuestros servicios</li>
+            </ul>
+            
+            <h2>3. Almacenamiento y Seguridad</h2>
+            <p>Implementamos medidas de seguridad técnicas y organizativas para proteger tu información personal contra accesos no autorizados, alteración, divulgación o destrucción. Sin embargo, ningún método de transmisión por Internet o almacenamiento electrónico es 100% seguro.</p>
+            
+            <h2>4. Compartir Información</h2>
+            <p>No vendemos ni alquilamos tu información personal a terceros. Solo compartimos información en las siguientes circunstancias:</p>
+            <ul>
+                <li>Con tu consentimiento explícito</li>
+                <li>Cuando sea necesario para proporcionar el servicio (proveedores de servicios de confianza)</li>
+                <li>Para cumplir con obligaciones legales</li>
+                <li>Para proteger los derechos y la seguridad de la aplicación y sus usuarios</li>
+            </ul>
+            
+            <h2>5. Tus Derechos</h2>
+            <p>Tienes derecho a:</p>
+            <ul>
+                <li>Acceder a tu información personal</li>
+                <li>Solicitar corrección o eliminación de tus datos</li>
+                <li>Oponerte al procesamiento de tus datos</li>
+                <li>Solicitar la portabilidad de tus datos</li>
+                <li>Retirar tu consentimiento en cualquier momento</li>
+            </ul>
+            
+            <h2>6. Cookies y Tecnologías Similares</h2>
+            <p>Utilizamos cookies y tecnologías similares para recordar tus preferencias, analizar el uso de la aplicación y personalizar tu experiencia. Puedes configurar tu navegador para rechazar todas las cookies, pero esto puede afectar la funcionalidad de la aplicación.</p>
+            
+            <h2>7. Cambios en esta Política</h2>
+            <p>Podemos actualizar nuestra Política de Privacidad periódicamente. Te notificaremos de cualquier cambio publicando la nueva política en esta página y actualizando la fecha de "Última actualización".</p>
+            
+            <h2>8. Contacto</h2>
+            <p>Si tienes preguntas sobre esta Política de Privacidad, por favor contáctanos en:</p>
+            <p>Email: privacidad@calendariopersonal.com</p>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="index.html">Volver al Inicio</a>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2025 Calendario Personal - Todos los derechos reservados | 
+            <a href="privacidad.html">Política de Privacidad</a> | 
+            <a href="terminos.html">Términos y Condiciones</a>
+        </p>
+    </footer>
+
+    <script>
+        // Función para cambiar entre temas claro y oscuro
+        document.getElementById('cambiarTema').addEventListener('click', function() {
+            const body = document.body;
+            const botonTema = document.getElementById('cambiarTema');
+            
+            if (body.classList.contains('tema-claro')) {
+                body.classList.remove('tema-claro');
+                body.classList.add('tema-oscuro');
+                botonTema.textContent = '☀️ Tema Claro';
+                localStorage.setItem('tema', 'oscuro');
+            } else {
+                body.classList.remove('tema-oscuro');
+                body.classList.add('tema-claro');
+                botonTema.textContent = '🌙 Tema Oscuro';
+                localStorage.setItem('tema', 'claro');
+            }
+        });
+
+        // Cargar tema guardado al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            const temaGuardado = localStorage.getItem('tema');
+            const botonTema = document.getElementById('cambiarTema');
+            
+            if (temaGuardado === 'oscuro') {
+                document.body.classList.remove('tema-claro');
+                document.body.classList.add('tema-oscuro');
+                botonTema.textContent = '☀️ Tema Claro';
+            }
+        });
+    </script>
+</body>
+</html>

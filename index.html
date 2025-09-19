@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario Personal - Inicio</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="tema-claro">
+    <button class="boton-tema" id="cambiarTema">🌙 Tema Oscuro</button>
+    
+    <div class="contenedor">
+        <h1>Calendario Personal</h1>
+        <p>Documentación legal y términos de uso</p>
+        
+        <div class="menu-principal">
+            <a href="terminos.html">Términos y Condiciones</a>
+            <a href="privacidad.html">Política de Privacidad</a>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2025 Calendario Personal - Todos los derechos reservados | 
+            <a href="privacidad.html">Política de Privacidad</a> | 
+            <a href="terminos.html">Términos y Condiciones</a>
+        </p>
+    </footer>
+
+    <script>
+        // Función para cambiar entre temas claro y oscuro
+        document.getElementById('cambiarTema').addEventListener('click', function() {
+            const body = document.body;
+            const botonTema = document.getElementById('cambiarTema');
+            
+            if (body.classList.contains('tema-claro')) {
+                body.classList.remove('tema-claro');
+                body.classList.add('tema-oscuro');
+                botonTema.textContent = '☀️ Tema Claro';
+                // Guardar preferencia
+                localStorage.setItem('tema', 'oscuro');
+            } else {
+                body.classList.remove('tema-oscuro');
+                body.classList.add('tema-claro');
+                botonTema.textContent = '🌙 Tema Oscuro';
+                // Guardar preferencia
+                localStorage.setItem('tema', 'claro');
+            }
+        });
+
+        // Cargar tema guardado al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            const temaGuardado = localStorage.getItem('tema');
+            const botonTema = document.getElementById('cambiarTema');
+            
+            if (temaGuardado === 'oscuro') {
+                document.body.classList.remove('tema-claro');
+                document.body.classList.add('tema-oscuro');
+                botonTema.textContent = '☀️ Tema Claro';
+            }
+        });
+    </script>
+</body>
+</html>
