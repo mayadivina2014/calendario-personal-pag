@@ -1,24 +1,25 @@
 /* Estilos generales */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Arial', sans-serif; /* Puedes cambiar esto a una fuente más elegante si lo deseas */
     margin: 0;
     padding: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.5s, color 0.5s;
+    line-height: 1.6;
 }
 
-/* Estilos para el tema claro (por defecto) */
+/* Estilos para el tema claro */
 body.tema-claro {
-    background-color: #ffffff;
+    background-color: #F8F5E9; /* Un color crema suave */
     color: #333;
 }
 
 /* Estilos para el tema oscuro */
 body.tema-oscuro {
-    background-color: #121212;
-    color: #f0f0f0;
+    background-color: #1A1A2E; /* Un azul oscuro profundo */
+    color: #EAEAEA;
 }
 
 /* Estilos para el botón de cambio de tema */
@@ -35,21 +36,24 @@ body.tema-oscuro {
 }
 
 .tema-claro .boton-tema {
-    background-color: #8a2be2;
+    background-color: #A084E1; /* Lila suave */
     color: white;
 }
 
 .tema-oscuro .boton-tema {
-    background-color: #9c4dff;
-    color: white;
+    background-color: #A67C52; /* Dorado antiguo */
+    color: #F8F5E9;
 }
 
 /* Estilos para el contenedor principal */
 .contenedor {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 800px;
+    margin: 40px auto;
     padding: 20px;
     text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -57,11 +61,24 @@ body.tema-oscuro {
     align-items: center;
 }
 
+.tema-oscuro .contenedor {
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
 /* Estilos para los títulos */
 h1 {
-    font-size: 3rem;
-    margin-bottom: 2rem;
-    color: #8a2be2;
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    color: #A67C52; /* Dorado antiguo */
+    font-family: 'Georgia', serif; /* Fuente más clásica para el título */
+}
+
+h2 {
+    color: #A67C52; /* Dorado antiguo */
+    border-bottom: 2px solid #A67C52;
+    padding-bottom: 5px;
+    margin-top: 2rem;
 }
 
 /* Estilos para los enlaces */
@@ -69,49 +86,61 @@ a {
     display: inline-block;
     margin: 10px;
     padding: 12px 24px;
-    background-color: #8a2be2;
+    background-color: #A084E1; /* Lila suave */
     color: white;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
 }
 
-a:hover {
-    background-color: #7b1fa2;
+.tema-oscuro a {
+    background-color: #A67C52; /* Dorado antiguo */
 }
 
-/* Estilos específicos para la página de términos */
+a:hover {
+    background-color: #8C6443; /* Un tono más oscuro para el hover */
+}
+
+.menu-principal a {
+    background-color: #A084E1;
+}
+
+.tema-oscuro .menu-principal a {
+    background-color: #A084E1;
+}
+
 .terminos {
     text-align: left;
-    max-width: 800px;
-    margin: 0 auto;
     padding: 20px;
-    line-height: 1.6;
 }
 
-.terminos h2 {
-    color: #8a2be2;
-    margin-top: 2rem;
-}
-
-.terminos p {
-    margin-bottom: 1rem;
+.terminos p, .terminos ul {
+    font-size: 1rem;
+    line-height: 1.8;
 }
 
 /* Estilos para el pie de página */
 footer {
-    text-align: center;
     padding: 20px;
-    margin-top: auto;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: auto; /* Empuja el pie de página hacia abajo */
 }
 
-/* Estilos para pantallas pequeñas */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
-    
-    .contenedor {
-        padding: 10px;
-    }
+footer a {
+    display: inline;
+    padding: 0;
+    margin: 0 5px;
+    color: #A084E1; /* Lila suave */
+    background-color: transparent;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos específicos para la página de inicio */
+.bienvenida {
+    font-size: 1.2rem;
+    max-width: 600px;
 }
