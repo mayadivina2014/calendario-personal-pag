@@ -2,76 +2,68 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-s<cript src="script.js"></script>e=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Términos y Condiciones - Calendario de Recuerdos</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body class="tema-claro">
     <button class="boton-tema" id="cambiarTema">🌙 Tema Oscuro</button>
-    
+
     <div class="contenedor">
         <h1>Términos y Condiciones de Uso</h1>
-        
+
         <div class="terminos">
+            <p><em>Última actualización: 21 de septiembre de 2025</em></p>
+
             <h2>1. Aceptación de los Términos</h2>
-            <p>Al acceder y utilizar **Calendario de Recuerdos**, usted acepta cumplir con estos términos y condiciones. Si no está de acuerdo, no debe utilizar nuestra aplicación.</p>
-            
+            <p>Al acceder y usar <strong>Calendario de Recuerdos</strong>, aceptas estos términos. Si no estás de acuerdo, no uses la app.</p>
+
             <h2>2. Uso de la Aplicación</h2>
-            <p>La aplicación está diseñada como una herramienta personal y privada para organizar eventos, tareas y notas. Usted es responsable de la información que ingresa y de la seguridad de su dispositivo.</p>
-            
-            <h2>3. Privacidad</h2>
-            <p>Su privacidad es fundamental para nosotros. Como se detalla en nuestra Política de Privacidad, la aplicación no recopila ni transfiere sus datos personales. Toda su información se almacena de forma segura en su dispositivo.</p>
-            
+            <p>La app es para uso personal y privado, para organizar notas, eventos y recordatorios. Eres responsable de la información ingresada y de la seguridad de tu dispositivo.</p>
+
+            <h2>3. Cuenta Opcional</h2>
+            <p>Crear una cuenta es opcional y solo necesaria para usar el contador de días. Se solicita correo, nombre de usuario y contraseña. Los usuarios pueden eliminar su cuenta desde Ajustes → Cuenta → Eliminar cuenta.</p>
+
             <h2>4. Propiedad Intelectual</h2>
-            <p>Todo el contenido y el código de la aplicación son propiedad de mayadivina2014. No se permite la reproducción, distribución o modificación sin autorización.</p>
+            <p>Todo el contenido y código son propiedad de <strong>mayadivina2014</strong>. No se permite reproducción, distribución o modificación sin autorización.</p>
 
             <h2>5. Limitación de Responsabilidad</h2>
-            <p>La aplicación se proporciona "tal cual". No garantizamos que el uso de la aplicación sea ininterrumpido o libre de errores. No nos hacemos responsables de cualquier pérdida de datos o daños que puedan surgir del uso de esta aplicación.</p>
+            <p>La app se proporciona "tal cual". No garantizamos funcionamiento ininterrumpido ni libre de errores. No somos responsables de pérdida de datos o daños derivados del uso.</p>
 
-            <h2>6. Cambios en los Términos</h2>
-            <p>Nos reservamos el derecho de modificar estos términos en cualquier momento. Al continuar usando la aplicación después de cualquier cambio, usted acepta los nuevos términos.</p>
-            
-            <h2>7. Contacto</h2>
-            <p>Para cualquier pregunta sobre estos términos, por favor, póngase en contacto a través de nuestra página de GitHub o enviando un correo a <a href="mailto:Pixel-Alquimia@protonmail.com">**Pixel-Alquimia@protonmail.com**</a>.</p>
+            <h2>6. Solicitudes Legales</h2>
+            <p>Solo podemos divulgar información de cuentas opcionales si lo exige la ley. Los datos locales no pueden ser entregados.</p>
+
+            <h2>7. Cambios en los Términos</h2>
+            <p>Nos reservamos el derecho de modificar estos términos. Los cambios se publicarán aquí. Continuar usando la app implica aceptación de los nuevos términos.</p>
+
+            <h2>8. Contacto</h2>
+            <p>Para consultas, contacta a <a href="mailto:Pixel-Alquimia@protonmail.com">Pixel-Alquimia@protonmail.com</a> o visita nuestra página de GitHub.</p>
         </div>
-        
+
         <a href="index.html">Volver al inicio</a>
     </div>
-    
+
     <footer>
-        <p>© 2025 Calendario de Recuerdos - Todos los derechos reservados | 
+        <p>© 2025 Calendario de Recuerdos | 
             <a href="privacidad.html">Política de Privacidad</a> | 
             <a href="terminos.html">Términos y Condiciones</a>
         </p>
     </footer>
 
     <script>
-        // Función para cambiar entre temas claro y oscuro
-        document.getElementById('cambiarTema').addEventListener('click', function() {
-            const body = document.body;
-            const botonTema = document.getElementById('cambiarTema');
-            
-            if (body.classList.contains('tema-claro')) {
-                body.classList.remove('tema-claro');
-                body.classList.add('tema-oscuro');
-                botonTema.textContent = '☀️ Tema Claro';
-                localStorage.setItem('tema', 'oscuro');
-            } else {
-                body.classList.remove('tema-oscuro');
-                body.classList.add('tema-claro');
-                botonTema.textContent = '🌙 Tema Oscuro';
-                localStorage.setItem('tema', 'claro');
-            }
+        const botonTema = document.getElementById('cambiarTema');
+        botonTema.addEventListener('click', () => {
+            document.body.classList.toggle('tema-claro');
+            document.body.classList.toggle('tema-oscuro');
+            botonTema.textContent = document.body.classList.contains('tema-oscuro') ? '☀️ Tema Claro' : '🌙 Tema Oscuro';
+            localStorage.setItem('tema', document.body.classList.contains('tema-oscuro') ? 'oscuro' : 'claro');
         });
 
-        // Cargar tema guardado al cargar la página
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', () => {
             const temaGuardado = localStorage.getItem('tema');
-            const botonTema = document.getElementById('cambiarTema');
-            
             if (temaGuardado === 'oscuro') {
-                document.body.classList.remove('tema-claro');
                 document.body.classList.add('tema-oscuro');
+                document.body.classList.remove('tema-claro');
                 botonTema.textContent = '☀️ Tema Claro';
             }
         });
