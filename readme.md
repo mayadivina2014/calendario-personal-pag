@@ -34,13 +34,13 @@ Tu privacidad es una prioridad. Esta aplicación **no está vinculada a Google n
 
 ## 🛠️ Tecnologías Utilizadas
 
-* **Lenguaje:** Kotlin
-* **Plataforma:** Android
+* **Lenguaje:** Kotlin  
+* **Plataforma:** Android  
 * **Bibliotecas Clave:**
-    * **Retrofit:** Para las llamadas a la API de días festivos (`date.nager.at`).
-    * **WorkManager:** Para la sincronización en segundo plano de los días festivos.
-    * **Gson:** Para la serialización y deserialización de datos JSON.
-    * **Material Components for Android:** Para el diseño y los componentes de la interfaz de usuario.
+  * **Retrofit:** Para las llamadas a la API de días festivos (`date.nager.at`).
+  * **WorkManager:** Para la sincronización en segundo plano de los días festivos.
+  * **Gson:** Para la serialización y deserialización de datos JSON.
+  * **Material Components for Android:** Para el diseño y los componentes de la interfaz de usuario.
 
 ---
 
@@ -48,11 +48,13 @@ Tu privacidad es una prioridad. Esta aplicación **no está vinculada a Google n
 
 Para ejecutar este proyecto localmente, necesitas tener Android Studio instalado.
 
-1.  Clona este repositorio:
-    `git clone https://github.com/mayadivina2014/nombre-del-repositorio`
-2.  Abre el proyecto en Android Studio.
-3.  Sincroniza el proyecto con los archivos de Gradle.
-4.  Ejecuta la aplicación en un emulador o un dispositivo físico.
+1.  Clona este repositorio:  
+    ```bash
+    git clone https://github.com/mayadivina2014/nombre-del-repositorio
+    ```
+2.  Abre el proyecto en Android Studio.  
+3.  Sincroniza el proyecto con los archivos de Gradle.  
+4.  Ejecuta la aplicación en un emulador o un dispositivo físico.  
 
 ---
 
@@ -64,4 +66,6 @@ Para ejecutar este proyecto localmente, necesitas tener Android Studio instalado
 
 ## 📜 Licencia
 
-Este proyecto está bajo la Licencia MIT - mira el archivo [LICENSE.md](LICENSE.md) para más detalles.
+Este proyecto está licenciado bajo la **GNU General Public License v3.0 (GPL-3.0)**.  
+Puedes ver los detalles completos en el archivo [LICENSE.md](LICENSE.md).
+

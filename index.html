@@ -20,7 +20,7 @@
     </div>
     
     <footer>
-        <p>© 2025 Calendario de Recuerdos - Todos los derechos reservados | 
+        <p>© 2025 Pixel Alquimia - Proyecto Indie | 
             <a href="privacidad.html">Política de Privacidad</a> | 
             <a href="terminos.html">Términos y Condiciones</a>
         </p>
@@ -36,13 +36,11 @@
                 body.classList.remove('tema-claro');
                 body.classList.add('tema-oscuro');
                 botonTema.textContent = '☀️ Tema Claro';
-                // Guardar preferencia
                 localStorage.setItem('tema', 'oscuro');
             } else {
                 body.classList.remove('tema-oscuro');
                 body.classList.add('tema-claro');
                 botonTema.textContent = '🌙 Tema Oscuro';
-                // Guardar preferencia
                 localStorage.setItem('tema', 'claro');
             }
         });
