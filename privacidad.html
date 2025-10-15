@@ -17,7 +17,7 @@
 
     <section class="terminos">
       <h2>1. Responsable del tratamiento</h2>
-      <p>Responsable: <strong>Pixel-Alquimia</strong> (estudio independiente). País: Chile. Representante legal: <strong>mayadivina2014</strong>. Contacto: <a href="mailto:Pixel-Alquimia@protonmail.com">Pixel-Alquimia@protonmail.com</a>.</p>
+      <p>Responsable: <strong>Pixel-Alquimia</strong> (estudio independiente). País: Chile. Representante legal: <strong>mayadivina2014</strong> (seudónimo del creador menor de edad, José). Contacto: <a href="mailto:Pixel-Alquimia@protonmail.com">Pixel-Alquimia@protonmail.com</a>.</p>
 
       <h2>2. Alcance y principios</h2>
       <p>Esta Política de Privacidad se rige por las leyes de la República de Chile, en especial la Ley N° 19.628 sobre Protección de la Vida Privada y sus normas complementarias. La app “Calendario de Recuerdos” (la “app”) está diseñada para priorizar la privacidad y el control del usuario sobre sus datos. Por defecto funciona en modo <strong>local</strong>: los datos que ingreses permanecen en tu dispositivo y no son transmitidos a servidores externos salvo que decidas crear una cuenta opcional.</p>
@@ -63,7 +63,34 @@
 
       <h2>14. Contacto</h2>
       <p>Consultas o reclamos pueden dirigirse a <a href="mailto:Pixel-Alquimia@protonmail.com">Pixel-Alquimia@protonmail.com</a>.</p>
+
+      <h2>15. Modificaciones sin previo aviso</h2>
+      <p>Pixel-Alquimia se reserva el derecho de modificar, añadir o eliminar partes de esta Política de Privacidad en cualquier momento y sin aviso previo. El uso continuado de la aplicación después de dichos cambios implicará la aceptación de la nueva versión publicada.</p>
     </section>
   </main>
 
   <footer>
+    <p>© 2025 Pixel-Alquimia — Calendario de Recuerdos | <a href="terminos.html">Términos y Condiciones</a></p>
+  </footer>
+
+  <script>
+    // Control simple de tema (claro/oscuro)
+    (function() {
+      const boton = document.getElementById('cambiarTema');
+      function aplicarTema(t) {
+        document.body.classList.toggle('tema-oscuro', t === 'oscuro');
+        document.body.classList.toggle('tema-claro', t !== 'oscuro');
+        boton.textContent = t === 'oscuro' ? '☀️ Tema Claro' : '🌙 Tema Oscuro';
+      }
+      boton.addEventListener('click', () => {
+        const actual = localStorage.getItem('tema') === 'oscuro' ? 'claro' : 'oscuro';
+        localStorage.setItem('tema', actual);
+        aplicarTema(actual);
+      });
+      document.addEventListener('DOMContentLoaded', () => {
+        aplicarTema(localStorage.getItem('tema') || 'claro');
+      });
+    })();
+  </script>
+</body>
+</html>
